@@ -1,6 +1,6 @@
 import { createServer } from 'node:http';
 
-const ADDR = "127.0.0.1";
+const hostname = "127.0.0.1";
 const PORT = 3000;
 
 const server = createServer((req, res) => {
@@ -10,5 +10,5 @@ const server = createServer((req, res) => {
 
 server.listen(3000, '127.0.0.1', () => {
     console.log("Server Successfully Started");
-    console.log('Server running on: http://'+ADDR+':'+PORT);
+    console.log(`Server running on: http://'${hostname}:${PORT}`);
 });
