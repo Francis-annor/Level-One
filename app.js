@@ -1,6 +1,14 @@
-let http = require('http');
+import { createServer } from 'node:http';
 
-http.createServer((req, res) => {
-    res.writeHead(200, {'Content-Type':'test/plain'});
+const ADDR = "127.0.0.1";
+const PORT = 3000;
+
+const server = createServer((req, res) => {
+    res.writeHead(200, {'Content-Type':'text/plain'});
     res.end("Hello From Server NodeJS");
-}).listen(3030);
+});
+
+server.listen(3000, '127.0.0.1', () => {
+    console.log("Server Successfully Started");
+    console.log('Server running on: http://'+ADDR+':'+PORT);
+});
